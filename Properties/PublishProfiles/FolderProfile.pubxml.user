@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\dariu\source\repos\OrderShopApi\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2022-10-18T15:26:58.2969547Z;True|2022-10-18T16:56:46.7621740+02:00;True|2022-10-18T16:15:24.6858343+02:00;True|2022-09-17T12:59:27.4213472+02:00;True|2022-09-16T21:59:14.5160056+02:00;True|2022-09-16T21:54:19.7162106+02:00;True|2022-09-16T20:11:12.7807537+02:00;True|2022-09-16T19:44:46.8745039+02:00;True|2022-09-15T22:32:10.0126605+02:00;True|2022-09-14T17:55:36.1653123+02:00;True|2022-09-14T17:53:49.3988112+02:00;True|2022-09-14T17:41:08.4682376+02:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
