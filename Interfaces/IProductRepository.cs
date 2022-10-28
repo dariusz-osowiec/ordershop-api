@@ -1,9 +1,6 @@
 ﻿namespace OrderShopApi.Interfaces;
 
-/// <summary>
-/// Interfejs obsługi bazy danych.
-/// </summary>
-public interface IDbOperable
+public interface IProductRepository
 {
     /// <summary>
     /// Dodanie produktu do bazy.

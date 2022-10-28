@@ -2,16 +2,16 @@
 
 namespace OrderShopApi.Services;
 
-public class OrderService : IOrderOperable
+public class OrderService : IOrderRepository
 {
-    IMailOperable service;
-    IDbOperable dbservice;
+    IMailRepository service;
+    IProductRepository productService;
     SettingsService settings;
 
-    public OrderService(IMailOperable _service, IDbOperable _dbservice, SettingsService _settingsService)
+    public OrderService(IMailRepository _service, IProductRepository _productService, SettingsService _settingsService)
     {
         service = _service;
-        dbservice = _dbservice;
+        productService = _productService;
         settings = _settingsService;
     }
 
@@ -26,7 +26,7 @@ public class OrderService : IOrderOperable
     /// <returns>String koszyka.</returns>
     public string ProcessOrderBody(Order order)
     {
-        List<Product> products = dbservice.ReadAll();
+        List<Product> products = productService.ReadAll();
         Product product = new Product();
         int i = 1;
         string orderString = 

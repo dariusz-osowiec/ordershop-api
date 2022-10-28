@@ -1,7 +1,7 @@
 ﻿
 namespace OrderShopApi.Interfaces;
 
-public interface IMailOperable
+public interface IMailRepository
 {
     /// <summary>
     /// Wysłanie maila.

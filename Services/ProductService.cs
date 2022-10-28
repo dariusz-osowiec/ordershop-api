@@ -5,16 +5,16 @@ namespace OrderShopApi.Services;
 /// <summary>
 /// Implementacja interfejsu obsługi bazy danych (SQLite).
 /// </summary>
-public class DbService : IDbOperable
+public class ProductService : IProductRepository
 {
     /// <summary>
     /// Kontekst używanej bazy danych.
     /// </summary>
     readonly SQLiteContext context;
 
-    public DbService()
+    public ProductService(SQLiteContext _context)
     {
-        context = new SQLiteContext();
+        context = _context;
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////

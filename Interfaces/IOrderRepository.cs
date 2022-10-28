@@ -1,6 +1,6 @@
 ﻿namespace OrderShopApi.Interfaces;
 
-public interface IOrderOperable
+public interface IOrderRepository
 {
     /// <summary>
     /// Przetworzenie koszyka.

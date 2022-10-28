@@ -1,6 +1,6 @@
 ﻿namespace OrderShopApi.Interfaces;
 
-public interface IQuestionOperable
+public interface IQuestionRepository
 {
     /// <summary>
     /// Wysłanie zapytania na mail sklepu.

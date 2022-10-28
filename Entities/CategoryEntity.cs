@@ -2,7 +2,7 @@
 
 namespace OrderShopApi.Entities;
 
-[Table("category")]
+[Table("categories")]
 public class CategoryEntity
 {
     public int Id { get; set; }

@@ -11,13 +11,13 @@ public class OrdersController
     ///Zmienne.
     ///
 
-    IOrderOperable service;
+    IOrderRepository service;
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///Konstruktor.
     ///
 
-    public OrdersController(IOrderOperable service)
+    public OrdersController(IOrderRepository service)
     {
         this.service = service;
     }
@@ -38,15 +38,6 @@ public class OrdersController
             { 
                 return new BadRequestResult();
             }
-            string body = service.ProcessOrderBody(order);
-            if(!service.SendOrder(order.Customer, body))
-            {
-                return new StatusCodeResult(500);
-            }
-            if(!service.SendConfirmation(order.Customer, body))
-            {
-                return new StatusCodeResult(500);
-            } 
             return new OkResult();
         }
         catch (Exception e)

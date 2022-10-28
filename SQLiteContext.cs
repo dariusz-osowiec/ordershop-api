@@ -11,6 +11,7 @@ public class SQLiteContext : DbContext
     /// 
     public DbSet<CategoryEntity> Categories { get; set; }
     public DbSet<ProductEntity> Products { get; set; }
+    public DbSet<UserEntity> Users { get; set; }
 
     /// <summary>
     /// Opisanie encji w bazie danych za pomocą FluentApi.
@@ -63,6 +64,45 @@ public class SQLiteContext : DbContext
             .HasOne(e => e.Category)
             .WithMany(c => c.Products)
             .HasForeignKey(e => e.CategoryId);
+
+        ///
+        /// Opis encji użytkownika.
+        ///
+        builder.Entity<UserEntity>(entity =>
+        {
+            entity.Property(e => e.Id)
+            .HasColumnName("id")
+            .HasColumnType("integer")
+            .HasAnnotation("Sqlite:Autoincrement", true)
+            .ValueGeneratedOnAdd();
+            entity.Property(e => e.Name)
+            .HasColumnName("name")
+            .HasColumnType("text");
+            entity.Property(e => e.Surname)
+            .HasColumnName("surname")
+            .HasColumnType("text");
+            entity.Property(e => e.Email)
+            .HasColumnName("email")
+            .HasColumnType("text");
+            entity.Property(e => e.Password)
+            .HasColumnName("password")
+            .HasColumnType("text");
+            entity.Property(e => e.Address)
+            .HasColumnName("addresss")
+            .HasColumnType("text");
+            entity.Property(e => e.PostCode)
+            .HasColumnName("postcode")
+            .HasColumnType("text");
+            entity.Property(e => e.City)
+            .HasColumnName("city")
+            .HasColumnType("text");
+        });
+        builder.Entity<UserEntity>().HasKey(e => e.Id);
+
+        ///
+        /// Opis encji płatności.
+        ///
+
     }
 
     /// <summary>

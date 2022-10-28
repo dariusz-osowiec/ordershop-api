@@ -1,10 +1,10 @@
 ﻿namespace OrderShopApi.Services;
 
-public class QuestionService : IQuestionOperable
+public class QuestionService : IQuestionRepository
 {
-    IMailOperable service;
+    IMailRepository service;
 
-    public QuestionService(IMailOperable _service)
+    public QuestionService(IMailRepository _service)
     {
         service = _service;
     }

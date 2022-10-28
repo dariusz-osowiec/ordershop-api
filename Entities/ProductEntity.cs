@@ -2,7 +2,7 @@
 
 namespace OrderShopApi.Entities;
 
-[Table("product")]
+[Table("products")]
 public class ProductEntity
 {
     public int Id { get; set; }
@@ -17,6 +17,7 @@ public class ProductEntity
 
     /////////////////////////////////////////////////////////////////////////////
     ///Konwersje encji.
+    ///
 
     /// <summary>
     /// Konwersja do DTO.

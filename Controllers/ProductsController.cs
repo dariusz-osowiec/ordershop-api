@@ -6,20 +6,20 @@ namespace OrderShopApi.Controllers;
 /// Kontroler zarządzania dostępem do DB.
 /// </summary>
 [ApiController]
-[Route("db")]
-public class DbController
+[Route("products")]
+public class ProductsController
 {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///Zmienne.
     ///
 
-    private readonly IDbOperable service;
+    private readonly IProductRepository service;
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///Konstruktor.
     ///
 
-    public DbController(IDbOperable service)
+    public ProductsController(IProductRepository service)
     {
         this.service = service;
     }

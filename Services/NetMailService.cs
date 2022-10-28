@@ -4,7 +4,7 @@ using System.Text;
 namespace OrderShopApi.Services;
 
 
-public class NetMailService : IMailOperable
+public class NetMailService : IMailRepository
 {
     readonly SmtpClient client;
     readonly MailAddress sender;
@@ -38,7 +38,7 @@ public class NetMailService : IMailOperable
             message.SubjectEncoding = Encoding.UTF8;
             message.Body = body;
             message.Subject = subject;
-            client.Send(message);
+            //client.Send(message);
             return true;
         } 
         catch (Exception e)

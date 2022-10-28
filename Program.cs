@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication.Certificate;
-
+﻿
 var builder = WebApplication.CreateBuilder(args);
 
 var corsPolicyName = "CorsPolicy";
@@ -22,6 +21,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Dodanie kontekstu bazy danych
+builder.Services.AddDbContext<SQLiteContext>(ServiceLifetime.Scoped);
+
 //Dodanie usługi opcji serializacji JSONów.
 builder.Services.AddSingleton<JsonSerializerOptionsService>();
 
@@ -29,16 +31,16 @@ builder.Services.AddSingleton<JsonSerializerOptionsService>();
 builder.Services.AddSingleton<SettingsService>();
 
 //Dodanie obsługi bazy danych.
-builder.Services.AddScoped<IDbOperable, DbService>();
+builder.Services.AddScoped<IProductRepository, ProductService>();
 
-//Dodanie usługi obsługi wysyłania maili.
-builder.Services.AddScoped<IMailOperable, NetMailService>();
+//Usługa wysyłania maili.
+builder.Services.AddScoped<IMailRepository, NetMailService>();
 
 //Dodanie obsługi zamówień.
-builder.Services.AddScoped<IOrderOperable, OrderService>();
+builder.Services.AddScoped<IOrderRepository, OrderService>();
 
 //Dodanie obsługi zapytań.
-builder.Services.AddScoped<IQuestionOperable, QuestionService>();
+builder.Services.AddScoped<IQuestionRepository, QuestionService>();
 
 var app = builder.Build();
 
@@ -51,7 +53,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthentication();
 

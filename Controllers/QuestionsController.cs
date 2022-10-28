@@ -11,13 +11,13 @@ public class QuestionsController
     ///Zmienne.
     ///
 
-    IQuestionOperable service;
+    IQuestionRepository service;
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///Konstruktor.
     ///
 
-    public QuestionsController(IQuestionOperable service)
+    public QuestionsController(IQuestionRepository service)
     {
         this.service = service;
     }
